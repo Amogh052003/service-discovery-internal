@@ -5,7 +5,7 @@
 *.tfstate.*
 .terraform/
 .terraform.lock.hcl
-
+*.tfvars 
 ########################################
 # Sensitive files
 ########################################
