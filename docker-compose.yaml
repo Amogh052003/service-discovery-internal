@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+
+  consul:
+    image: hashicorp/consul:latest
+    container_name: consul
+    ports:
+      - "8500:8500"
+    command: agent -dev -client=0.0.0.0
+
+  service-a:
+    build: ./service-a
+    container_name: service-a
+    ports:
+      - "5001:5001"
+
+  service-b:
+    build: ./service-b
+    container_name: service-b
+    ports:
+      - "5002:5002"
+
+  service-c:
+    build: ./service-c
+    container_name: service-c
+    ports:
+      - "5003:5003"
